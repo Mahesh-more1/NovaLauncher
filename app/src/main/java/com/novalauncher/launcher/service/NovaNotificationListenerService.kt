@@ -47,8 +47,8 @@ class NovaNotificationListenerService : NotificationListenerService() {
         private const val TAG = "NovaNotifService"
 
         @Volatile
+        @JvmField
         var instance: NovaNotificationListenerService? = null
-            private set
 
         @JvmStatic
         fun getInstance(): NovaNotificationListenerService? = instance
