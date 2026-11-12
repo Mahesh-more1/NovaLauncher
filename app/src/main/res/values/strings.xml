@@ -74,6 +74,13 @@
     <string name="error_widget_add_failed">Could not add widget</string>
     <string name="error_no_home_set">NovaLauncher is not set as default home</string>
 
+    <!-- Accessibility & Content Descriptions -->
+    <string name="app_drawer_desc">Open app drawer</string>
+    <string name="app_icon_desc">App icon</string>
+    <string name="dock_icon_desc">Dock shortcut</string>
+    <string name="voice_search">Voice search</string>
+    <string name="wallpaper_desc">Wallpaper preview</string>
+
     <!-- Misc -->
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>

@@ -21,7 +21,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.appcompat.widget.Toolbar
-import com.novalauncher.launcher.AppPreferences
+import com.novalauncher.launcher.utils.AppPreferences
 import com.novalauncher.launcher.R
 import kotlin.math.abs
 import kotlin.math.sqrt

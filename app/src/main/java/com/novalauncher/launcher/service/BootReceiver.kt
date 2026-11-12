@@ -21,7 +21,7 @@ class BootReceiver : BroadcastReceiver() {
 
     companion object {
         private const val TAG = "BootReceiver"
-        private const val OVERLAY_SERVICE_CLASS = "com.novalauncher.launcher.SystemUIOverlayService"
+        private const val OVERLAY_SERVICE_CLASS = "com.novalauncher.launcher.service.SystemUIOverlayService"
     }
 
     override fun onReceive(context: Context, intent: Intent?) {
