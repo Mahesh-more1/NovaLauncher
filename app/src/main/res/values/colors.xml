@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    colors.xml — NovaLauncher iOS frosted-glass color palette
+
+    Naming convention:
+      ios_*       — exact iOS 17 Human Interface Guideline colors
+      frosted_*   — translucent frosted-glass surfaces (blur simulation)
+      dock_*      — bottom dock bar
+      qs_*        — Quick Settings panel
+      notif_*     — notification shade
+      widget_*    — widget card surfaces
+      search_*    — search bar
+      icon_*      — app icon label
+-->
+<resources>
+
+    <!-- ===================================================================
+         iOS SYSTEM COLORS (accurate to iOS 17 HIG)
+         =================================================================== -->
+
+    <!-- iOS Blue -->
+    <color name="ios_blue">#FF007AFF</color>
+    <!-- iOS Green -->
+    <color name="ios_green">#FF34C759</color>
+    <!-- iOS Indigo -->
+    <color name="ios_indigo">#FF5856D6</color>
+    <!-- iOS Orange -->
+    <color name="ios_orange">#FFFF9500</color>
+    <!-- iOS Pink -->
+    <color name="ios_pink">#FFFF2D55</color>
+    <!-- iOS Purple -->
+    <color name="ios_purple">#FFAF52DE</color>
+    <!-- iOS Red -->
+    <color name="ios_red">#FFFF3B30</color>
+    <!-- iOS Teal -->
+    <color name="ios_teal">#FF5AC8FA</color>
+    <!-- iOS Yellow -->
+    <color name="ios_yellow">#FFFFCC00</color>
+    <!-- iOS Gray -->
+    <color name="ios_gray">#FF8E8E93</color>
+    <!-- iOS Gray 2 -->
+    <color name="ios_gray2">#FFAEAEB2</color>
+    <!-- iOS Gray 6 (lightest) -->
+    <color name="ios_gray6">#FFF2F2F7</color>
+
+    <!-- ===================================================================
+         FROSTED / BLUR SURFACES
+         These approximate the iOS "ultra-thin material" via alpha compositing.
+         =================================================================== -->
+
+    <!-- Primary frosted dark (notification shade, overlay backdrop) -->
+    <color name="frosted_dark_heavy">#CC0D0D12</color>
+    <color name="frosted_dark_medium">#B2111118</color>
+    <color name="frosted_dark_light">#801A1A24</color>
+
+    <!-- Primary frosted light (cards on dark wallpaper) -->
+    <color name="frosted_light_heavy">#E5F5F5F7</color>
+    <color name="frosted_light_medium">#B2FFFFFF</color>
+    <color name="frosted_light_thin">#66FFFFFF</color>
+
+    <!-- Ultra-thin tinted (QS tiles inactive) -->
+    <color name="frosted_tile_inactive">#3DFFFFFF</color>
+    <!-- Active tile (white pill) -->
+    <color name="frosted_tile_active">#E6FFFFFF</color>
+
+    <!-- ===================================================================
+         WALLPAPER / ROOT
+         =================================================================== -->
+
+    <!-- Scrim overlay applied over wallpaper for readability -->
+    <color name="wallpaper_scrim">#4D000000</color>
+
+    <!-- ===================================================================
+         SEARCH BAR
+         =================================================================== -->
+
+    <color name="search_bar_bg">#66FFFFFF</color>
+    <color name="search_text_color">#FFFFFFFF</color>
+    <color name="search_hint_color">#99FFFFFF</color>
+
+    <!-- ===================================================================
+         BOTTOM DOCK
+         =================================================================== -->
+
+    <!-- Dock background: frosted white pill -->
+    <color name="dock_bg">#80FFFFFF</color>
+    <!-- Dock icon tint for the drawer button -->
+    <color name="dock_icon_tint">#FF1C1C1E</color>
+    <!-- Dock separator line -->
+    <color name="dock_divider">#33FFFFFF</color>
+
+    <!-- ===================================================================
+         QUICK SETTINGS PANEL
+         =================================================================== -->
+
+    <!-- Panel backdrop -->
+    <color name="qs_panel_bg">#CC0D0D18</color>
+    <!-- Tile inactive background -->
+    <color name="qs_tile_bg_inactive">#3DFFFFFF</color>
+    <!-- Tile active background -->
+    <color name="qs_tile_bg_active">#E6FFFFFF</color>
+    <!-- Tile icon inactive -->
+    <color name="qs_tile_icon_inactive">#FFFFFFFF</color>
+    <!-- Tile icon active -->
+    <color name="qs_tile_icon_active">#FF1C1C1E</color>
+    <!-- Tile label -->
+    <color name="qs_tile_label">#CCFFFFFF</color>
+
+    <!-- Slider track -->
+    <color name="qs_slider_track">#4DFFFFFF</color>
+    <!-- Slider fill + thumb -->
+    <color name="qs_slider_fill">#FFFFFFFF</color>
+
+    <!-- Section header text -->
+    <color name="qs_section_header">#B3FFFFFF</color>
+
+    <!-- ===================================================================
+         CLOCK (on lock/shade overlay)
+         =================================================================== -->
+
+    <color name="clock_time_color">#FFFFFFFF</color>
+    <color name="clock_date_color">#CCF5F5F7</color>
+
+    <!-- ===================================================================
+         NOTIFICATION SHADE
+         =================================================================== -->
+
+    <!-- Individual notification card background -->
+    <color name="notif_card_bg">#4DFFFFFF</color>
+    <!-- Notification title text -->
+    <color name="notif_title_color">#FFFFFFFF</color>
+    <!-- Notification body text -->
+    <color name="notif_body_color">#B3FFFFFF</color>
+    <!-- Notification time stamp -->
+    <color name="notif_time_color">#80FFFFFF</color>
+    <!-- Dismiss button -->
+    <color name="notif_dismiss_color">#8CFFFFFF</color>
+
+    <!-- ===================================================================
+         WIDGET CARDS
+         =================================================================== -->
+
+    <!-- Widget card surface (frosted glass) -->
+    <color name="widget_card_bg">#66FFFFFF</color>
+    <!-- Widget card stroke -->
+    <color name="widget_card_stroke">#33FFFFFF</color>
+    <!-- Widget resize handle -->
+    <color name="widget_resize_handle">#FFFFFFFF</color>
+
+    <!-- ===================================================================
+         APP ICONS
+         =================================================================== -->
+
+    <!-- Label text color (always white for visibility on any wallpaper) -->
+    <color name="icon_label_color">#FFFFFFFF</color>
+    <!-- Label drop shadow -->
+    <color name="icon_label_shadow">#99000000</color>
+
+    <!-- Page indicator dot active -->
+    <color name="page_dot_active">#FFFFFFFF</color>
+    <!-- Page indicator dot inactive -->
+    <color name="page_dot_inactive">#66FFFFFF</color>
+
+    <!-- ===================================================================
+         RIPPLE / INTERACTION
+         =================================================================== -->
+
+    <color name="ripple_color">#33FFFFFF</color>
+
+    <!-- ===================================================================
+         PRIMARY / ACCENT (AppCompat compat)
+         =================================================================== -->
+
+    <color name="colorPrimary">#FF007AFF</color>
+    <color name="colorPrimaryDark">#FF0051B3</color>
+    <color name="colorAccent">#FF007AFF</color>
+
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_app_icon.xml
+    Single app icon cell used in the home screen grid and app drawer.
+
+    Layout:
+      FrameLayout (cell root, square)
+        └── LinearLayout (vertical, centered)
+              ├── FrameLayout (icon container with shadow)
+              │     └── ImageView (app icon, 52dp)
+              └── TextView  (app label, truncated, with text shadow)
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="80dp"
+    android:layout_height="96dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="6dp"
+        android:paddingBottom="4dp">
+
+        <!-- Icon container: rounded bg + elevation for iOS-style shadow -->
+        <FrameLayout
+            android:id="@+id/icon_container"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:elevation="4dp">
+
+            <!-- Drop shadow layer (via outline provider in code) -->
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/app_icon_desc"
+                tools:src="@android:drawable/sym_def_app_icon" />
+
+        </FrameLayout>
+
+        <!-- App label: white text with drop shadow, single line, ellipsize -->
+        <TextView
+            android:id="@+id/app_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="11sp"
+            android:textColor="@color/icon_label_color"
+            android:shadowColor="@color/icon_label_shadow"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            tools:text="App Name" />
+
+    </LinearLayout>
+
+</FrameLayout>

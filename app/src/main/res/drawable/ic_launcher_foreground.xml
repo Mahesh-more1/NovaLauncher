@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Stylized Nova / Starburst Rays -->
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M54,18 L56,42 L80,44 L56,46 L54,70 L52,46 L28,44 L52,42 Z" />
+
+    <path
+        android:fillColor="#3000E5FF"
+        android:pathData="M54,26 L55.5,41 L70,42.5 L55.5,44 L54,58 L52.5,44 L38,42.5 L52.5,41 Z" />
+
+    <!-- Orbital Energy Ring -->
+    <path
+        android:strokeColor="#8000E5FF"
+        android:strokeWidth="1.5"
+        android:pathData="M34,58 C38,70 70,70 74,58" />
+
+    <!-- Rocket Flame / Exhaust Trail -->
+    <path
+        android:fillColor="#FFFF9100"
+        android:pathData="M51,68 L54,82 L57,68 Q54,73 51,68 Z" />
+
+    <path
+        android:fillColor="#FFFFD700"
+        android:pathData="M52.5,68 L54,77 L55.5,68 Z" />
+
+    <!-- Left Rocket Fin -->
+    <path
+        android:fillColor="#FF7C4DFF"
+        android:pathData="M44,56 L38,66 C42,67 47,65 48,61 Z" />
+
+    <!-- Right Rocket Fin -->
+    <path
+        android:fillColor="#FF7C4DFF"
+        android:pathData="M64,56 L70,66 C66,67 61,65 60,61 Z" />
+
+    <!-- Rocket Main Fuselage -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M54,28 C50,38 46,52 46,67 L62,67 C62,52 58,38 54,28 Z" />
+
+    <!-- Cockpit Window / Core Ring -->
+    <path
+        android:fillColor="#FF00B0FF"
+        android:pathData="M54,40 A5,5 0 1,1 53.9,40 Z" />
+
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M53,38 A1.5,1.5 0 1,1 52.9,38 Z" />
+
+    <!-- Subtle Fuselage Shadow Accent -->
+    <path
+        android:fillColor="#15000000"
+        android:pathData="M54,28 C56,38 62,52 62,67 L54,67 Z" />
+</vector>
+

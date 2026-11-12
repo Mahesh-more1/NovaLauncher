@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">NovaLauncher</string>
+    <string name="app_name_short">Nova</string>
+
+    <!-- Launcher UI -->
+    <string name="search_hint">Search apps…</string>
+    <string name="all_apps_label">All Apps</string>
+    <string name="home_label">Home</string>
+    <string name="dock_label">Dock</string>
+    <string name="drawer_button_label">App Drawer</string>
+    <string name="wallpaper_label">Wallpaper</string>
+
+    <!-- App actions -->
+    <string name="launch_app">Open</string>
+    <string name="uninstall_app">Uninstall</string>
+    <string name="app_info">App Info</string>
+    <string name="add_to_home">Add to Home Screen</string>
+    <string name="remove_from_home">Remove</string>
+    <string name="pin_to_dock">Pin to Dock</string>
+    <string name="rename_shortcut">Rename</string>
+
+    <!-- Widget strings -->
+    <string name="widgets_label">Widgets</string>
+    <string name="add_widget">Add Widget</string>
+    <string name="remove_widget">Remove Widget</string>
+    <string name="resize_widget">Resize Widget</string>
+    <string name="no_widgets">No widgets added yet</string>
+    <string name="widget_host_error">Could not load widget</string>
+    <string name="widget_configure">Configure Widget</string>
+
+    <!-- System UI Overlay -->
+    <string name="notification_listener_label">NovaLauncher Notifications</string>
+    <string name="overlay_service_name">Nova UI Overlay</string>
+    <string name="quick_settings_label">Quick Settings</string>
+    <string name="notifications_label">Notifications</string>
+    <string name="no_notifications">No notifications</string>
+    <string name="clear_all_notifications">Clear All</string>
+
+    <!-- Quick Setting toggles -->
+    <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_airplane">Airplane Mode</string>
+    <string name="toggle_flashlight">Flashlight</string>
+    <string name="toggle_rotation">Auto-Rotate</string>
+    <string name="toggle_dnd">Do Not Disturb</string>
+    <string name="toggle_battery_saver">Battery Saver</string>
+
+    <!-- Physics Engine -->
+    <string name="physics_mode_normal">Normal</string>
+    <string name="physics_mode_antigravity">Anti-Gravity</string>
+    <string name="physics_mode_fluid">Fluid</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Launcher Settings</string>
+    <string name="settings_label">Launcher Settings</string>
+    <string name="settings_grid_size">Grid Size</string>
+    <string name="settings_icon_size">Icon Size</string>
+    <string name="settings_animations">Animations</string>
+    <string name="settings_physics">Physics Effects</string>
+    <string name="settings_wallpaper">Change Wallpaper</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_about">About NovaLauncher</string>
+
+    <!-- Permissions -->
+    <string name="perm_rationale_overlay">NovaLauncher needs overlay permission to show the iOS-style Quick Settings and notification panel on top of other apps.</string>
+    <string name="perm_rationale_notification">NovaLauncher needs Notification Access to display notifications in the pull-down shade.</string>
+    <string name="perm_grant">Grant Permission</string>
+    <string name="perm_skip">Not Now</string>
+
+    <!-- Errors -->
+    <string name="error_launch_failed">Could not launch app</string>
+    <string name="error_widget_add_failed">Could not add widget</string>
+    <string name="error_no_home_set">NovaLauncher is not set as default home</string>
+
+    <!-- Misc -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="close">Close</string>
+    <string name="version">Version %1$s</string>
+</resources>
+

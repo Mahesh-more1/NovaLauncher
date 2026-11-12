@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_home_page.xml
+    Layout for an individual home screen page inside ViewPager2.
+    Contains the 4-column app icon and widget grid, plus an optional empty-page hint.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_page_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- 4-column Home Grid for Shortcuts and Widgets -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_grid_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="64dp"
+        android:paddingBottom="96dp"
+        android:scrollbars="none"
+        android:overScrollMode="never" />
+
+    <!-- Optional placeholder when a page has no shortcuts -->
+    <LinearLayout
+        android:id="@+id/empty_page_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/empty_page_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drag apps or widgets here"
+            android:textColor="@color/search_hint_color"
+            android:textSize="14sp"
+            android:alpha="0.8" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_launcher.xml
+    Root layout for NovaLauncher's home screen.
+
+    Z-order (bottom → top):
+      1. WallpaperView (ImageView)        – static wallpaper bitmap
+      2. ViewPager2                        – home screen pages (icons, widgets)
+      3. Top search bar                    – translucent rounded pill
+      4. Bottom dock                       – 4 shortcuts + drawer button
+      5. Overlay anchor (for SystemUI)     – zero-size, top of stack
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/launcher_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <!-- ================================================================== -->
+    <!-- 1. WALLPAPER LAYER                                                   -->
+    <!-- ================================================================== -->
+    <ImageView
+        android:id="@+id/wallpaper_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/wallpaper_desc"
+        tools:src="@android:color/darker_gray" />
+
+    <!-- ================================================================== -->
+    <!-- 2. HOME SCREEN PAGES (ViewPager2)                                   -->
+    <!--    Fills the entire screen; pages contain app grids + widgets.      -->
+    <!-- ================================================================== -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/home_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" />
+
+    <!-- ================================================================== -->
+    <!-- 3. SEARCH BAR (top, translucent pill)                               -->
+    <!-- ================================================================== -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search_bar_card"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="52dp"
+        app:cardCornerRadius="24dp"
+        app:cardBackgroundColor="@color/search_bar_bg"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp">
+
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:contentDescription="@string/search_hint"
+                android:tint="@color/search_hint_color" />
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="@string/search_hint"
+                android:textColorHint="@color/search_hint_color"
+                android:textColor="@color/search_text_color"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:singleLine="true" />
+
+            <ImageView
+                android:id="@+id/search_mic"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:contentDescription="@string/voice_search"
+                android:tint="@color/search_hint_color" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- ================================================================== -->
+    <!-- 4. BOTTOM DOCK BAR                                                  -->
+    <!--    Frosted glass pill containing 4 app shortcuts + drawer trigger.  -->
+    <!-- ================================================================== -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dock_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="28dp"
+        app:cardBackgroundColor="@color/dock_bg"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/dock_container"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <!-- Dock slot 1 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dock_icon_1"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/dock_icon_desc"
+                    tools:src="@android:drawable/ic_menu_call" />
+            </FrameLayout>
+
+            <!-- Dock slot 2 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dock_icon_2"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/dock_icon_desc"
+                    tools:src="@android:drawable/ic_menu_send" />
+            </FrameLayout>
+
+            <!-- Dock slot 3 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dock_icon_3"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/dock_icon_desc"
+                    tools:src="@android:drawable/ic_menu_camera" />
+            </FrameLayout>
+
+            <!-- Dock slot 4 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dock_icon_4"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/dock_icon_desc"
+                    tools:src="@android:drawable/ic_menu_gallery" />
+            </FrameLayout>
+
+            <!-- App Drawer Button (center pill) -->
+            <FrameLayout
+                android:id="@+id/app_drawer_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <ImageView
+                    android:id="@+id/drawer_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_more"
+                    android:contentDescription="@string/app_drawer_desc"
+                    android:tint="@color/dock_icon_tint" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- ================================================================== -->
+    <!-- 5. PAGE INDICATOR (dots)                                            -->
+    <!-- ================================================================== -->
+    <LinearLayout
+        android:id="@+id/page_indicator_container"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="116dp"
+        android:orientation="horizontal"
+        android:gravity="center" />
+
+    <!-- ================================================================== -->
+    <!-- 6. OVERLAY ANCHOR — zero-size, always on top for SystemUI injection -->
+    <!-- ================================================================== -->
+    <View
+        android:id="@+id/overlay_anchor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="top|start" />
+
+</FrameLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    widget_host_container.xml
+    Reusable container that holds one AppWidgetHostView (inflated by WidgetManager).
+
+    The outer CardView provides the iOS-style rounded frosted-glass widget frame.
+    WidgetManager.addWidget() calls container.removeAllViews() then injects
+    a WidgetSurfaceWrapper (which wraps the AppWidgetHostView) as the sole child
+    of @id/widget_frame.
+
+    Resize handles (corner dots) are shown on long-press by LauncherActivity.
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/widget_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@color/widget_card_bg"
+    app:cardElevation="6dp">
+
+    <!-- Actual widget content injected here by WidgetManager -->
+    <FrameLayout
+        android:id="@+id/widget_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="80dp"
+        android:clipChildren="true"
+        android:clipToPadding="true" />
+
+    <!-- Resize handles (shown via VISIBLE/INVISIBLE in code on long-press) -->
+    <FrameLayout
+        android:id="@+id/resize_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="false">
+
+        <!-- Top-left handle -->
+        <View
+            android:id="@+id/handle_tl"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="top|start"
+            android:layout_margin="4dp"
+            android:background="@drawable/widget_resize_handle" />
+
+        <!-- Top-right handle -->
+        <View
+            android:id="@+id/handle_tr"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="4dp"
+            android:background="@drawable/widget_resize_handle" />
+
+        <!-- Bottom-left handle -->
+        <View
+            android:id="@+id/handle_bl"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="4dp"
+            android:background="@drawable/widget_resize_handle" />
+
+        <!-- Bottom-right handle -->
+        <View
+            android:id="@+id/handle_br"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="4dp"
+            android:background="@drawable/widget_resize_handle" />
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

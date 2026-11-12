@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121214"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Top App Bar / Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1A1A1E"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_chevron_right"
+        app:title="@string/settings_title"
+        app:titleTextColor="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:overScrollMode="ifContentScrolls"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ========================================== -->
+            <!-- SECTION A: HOME SCREEN                     -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="6dp"
+                android:text="HOME SCREEN"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Grid Columns (Arrow/Dialog) -->
+                    <include
+                        android:id="@+id/row_grid_columns"
+                        layout="@layout/item_preference_arrow" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Icon Size Slider -->
+                    <include
+                        android:id="@+id/row_icon_size"
+                        layout="@layout/item_preference_slider" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Show Icon Labels Toggle -->
+                    <include
+                        android:id="@+id/row_show_labels"
+                        layout="@layout/item_preference_switch" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ========================================== -->
+            <!-- SECTION B: PHYSICS                         -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="6dp"
+                android:text="PHYSICS &amp; FLUID DYNAMICS"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Enable Physics Toggle -->
+                    <include
+                        android:id="@+id/row_physics_enable"
+                        layout="@layout/item_preference_switch" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Gravity Strength Slider (-1.0 to 1.0) -->
+                    <include
+                        android:id="@+id/row_gravity_strength"
+                        layout="@layout/item_preference_slider" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Fluid Resistance Slider (0.0 to 1.0) -->
+                    <include
+                        android:id="@+id/row_fluid_resistance"
+                        layout="@layout/item_preference_slider" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Collision Detection Toggle -->
+                    <include
+                        android:id="@+id/row_collision_detection"
+                        layout="@layout/item_preference_switch" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Live Physics Preview Container -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Live Physics Simulation Preview"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Tap or drag inside the box to disturb particles"
+                            android:textColor="#8E8E93"
+                            android:textSize="11sp" />
+
+                        <FrameLayout
+                            android:id="@+id/physics_preview_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#121214"
+                            android:clipChildren="true" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ========================================== -->
+            <!-- SECTION C: APPEARANCE                      -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="6dp"
+                android:text="APPEARANCE"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Icon Pack Selector -->
+                    <include
+                        android:id="@+id/row_icon_pack"
+                        layout="@layout/item_preference_arrow" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Wallpaper Picker -->
+                    <include
+                        android:id="@+id/row_wallpaper_picker"
+                        layout="@layout/item_preference_arrow" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Dock Style (Frosted / Solid / Transparent) -->
+                    <include
+                        android:id="@+id/row_dock_style"
+                        layout="@layout/item_preference_arrow" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ========================================== -->
+            <!-- SECTION D: SYSTEM OVERLAY                  -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="6dp"
+                android:text="SYSTEM OVERLAY"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Enable iOS Quick Settings -->
+                    <include
+                        android:id="@+id/row_quick_settings"
+                        layout="@layout/item_preference_switch" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Show Notification Shade -->
+                    <include
+                        android:id="@+id/row_notification_shade"
+                        layout="@layout/item_preference_switch" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ========================================== -->
+            <!-- SECTION E: PERFORMANCE                     -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="6dp"
+                android:text="PERFORMANCE"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Smooth Animations Toggle -->
+                    <include
+                        android:id="@+id/row_smooth_animations"
+                        layout="@layout/item_preference_switch" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Battery Saver Mode Toggle -->
+                    <include
+                        android:id="@+id/row_battery_saver"
+                        layout="@layout/item_preference_switch" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ========================================== -->
+            <!-- SECTION F: ABOUT                           -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="6dp"
+                android:text="ABOUT"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Version Row -->
+                    <include
+                        android:id="@+id/row_about_version"
+                        layout="@layout/item_preference_arrow" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- GitHub Link Row -->
+                    <include
+                        android:id="@+id/row_about_github"
+                        layout="@layout/item_preference_arrow" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="56dp"
+                        android:background="#2C2C2E" />
+
+                    <!-- Reset to Defaults Row -->
+                    <include
+                        android:id="@+id/row_about_reset"
+                        layout="@layout/item_preference_arrow" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

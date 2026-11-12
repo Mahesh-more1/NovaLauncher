@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    layout_dock.xml
+    Dock bar at the bottom of the NovaLauncher home screen.
+    Features:
+      - 68dp height with 24dp corner radius frosted card background
+      - 5 slots (4 pinned app shortcuts + 1 center app drawer button)
+      - Each slot contains a 52dp FrameLayout with icon and notification badge dot
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dock_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="68dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dock_card_container"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/dock_bg"
+        android:clipChildren="false">
+
+        <LinearLayout
+            android:id="@+id/dock_slots_linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:baselineAligned="false"
+            android:clipChildren="false">
+
+            <!-- Slot 1: App Shortcut 1 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <FrameLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/dock_icon_0"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Dock Item 1"
+                        tools:src="@android:drawable/sym_def_app_icon" />
+
+                    <View
+                        android:id="@+id/dock_badge_0"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@drawable/widget_resize_handle"
+                        android:backgroundTint="@color/ios_red"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <!-- Slot 2: App Shortcut 2 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <FrameLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/dock_icon_1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Dock Item 2"
+                        tools:src="@android:drawable/sym_def_app_icon" />
+
+                    <View
+                        android:id="@+id/dock_badge_1"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@drawable/widget_resize_handle"
+                        android:backgroundTint="@color/ios_red"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <!-- Slot Center: App Drawer Launcher Button -->
+            <FrameLayout
+                android:id="@+id/dock_slot_drawer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <FrameLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/dock_drawer_icon"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_dialog_dialer"
+                        android:tint="@color/dock_icon_tint"
+                        android:contentDescription="@string/drawer_button_label" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <!-- Slot 3: App Shortcut 3 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <FrameLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/dock_icon_2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Dock Item 3"
+                        tools:src="@android:drawable/sym_def_app_icon" />
+
+                    <View
+                        android:id="@+id/dock_badge_2"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@drawable/widget_resize_handle"
+                        android:backgroundTint="@color/ios_red"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <!-- Slot 4: App Shortcut 4 -->
+            <FrameLayout
+                android:id="@+id/dock_slot_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <FrameLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/dock_icon_3"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Dock Item 4"
+                        tools:src="@android:drawable/sym_def_app_icon" />
+
+                    <View
+                        android:id="@+id/dock_badge_3"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@drawable/widget_resize_handle"
+                        android:backgroundTint="@color/ios_red"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

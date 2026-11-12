@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ===================================================================
+         BASE APPLICATION THEME
+         Fullscreen, edge-to-edge, translucent nav bar, no status bar
+         =================================================================== -->
+
+    <style name="Theme.NovaLauncher" parent="Theme.AppCompat.NoActionBar">
+
+        <!-- Make the app draw behind system bars -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- Transparent system bars -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Light nav bar icons when wallpaper is bright (overridden in code) -->
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Hardware acceleration -->
+        <item name="android:hardwareAccelerated">true</item>
+
+        <!-- No window background — wallpaper shows through -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+
+        <!-- Smooth transitions -->
+        <item name="android:windowAnimationStyle">@style/WindowAnimation.Launcher</item>
+
+        <!-- Ripple color -->
+        <item name="colorControlHighlight">@color/ripple_color</item>
+    </style>
+
+    <!-- Launcher window animation — fade only (no slide) for home-screen feel -->
+    <style name="WindowAnimation.Launcher" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <!-- ===================================================================
+         APP DRAWER BOTTOM SHEET
+         =================================================================== -->
+
+    <style name="Theme.NovaLauncher.AppDrawer" parent="Theme.NovaLauncher">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimation.BottomSheet</item>
+    </style>
+
+    <style name="WindowAnimation.BottomSheet" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <!-- ===================================================================
+         QUICK SETTINGS / NOTIFICATION PANEL
+         Overlay dialog with blur-like dark background
+         =================================================================== -->
+
+    <style name="Theme.NovaLauncher.Overlay" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- ===================================================================
+         WIDGET CARD
+         =================================================================== -->
+
+    <style name="WidgetCard">
+        <item name="android:background">@color/widget_card_bg</item>
+        <item name="android:elevation">6dp</item>
+    </style>
+
+    <!-- ===================================================================
+         ICON LABEL
+         =================================================================== -->
+
+    <style name="AppIconLabel">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/icon_label_color</item>
+        <item name="android:shadowColor">@color/icon_label_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- ===================================================================
+         SEARCH BAR INPUT
+         =================================================================== -->
+
+    <style name="SearchBarInput">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/search_text_color</item>
+        <item name="android:textColorHint">@color/search_hint_color</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- ===================================================================
+         QS TILE LABEL
+         =================================================================== -->
+
+    <style name="QSTileLabel">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/qs_tile_label</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- ===================================================================
+         NOTIFICATION CARD TEXT
+         =================================================================== -->
+
+    <style name="NotifTitle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/notif_title_color</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NotifBody">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/notif_body_color</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <!-- ===================================================================
+         SETTINGS ACTIVITY THEME
+         =================================================================== -->
+    <style name="Theme.NovaLauncher.Settings" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">#121214</item>
+        <item name="android:colorBackground">#121214</item>
+        <item name="colorPrimary">@color/ios_blue</item>
+        <item name="colorPrimaryDark">#0A0A0C</item>
+        <item name="colorAccent">@color/ios_blue</item>
+        <item name="android:statusBarColor">#121214</item>
+        <item name="android:navigationBarColor">#121214</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+</resources>
