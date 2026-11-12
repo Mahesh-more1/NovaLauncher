@@ -51,6 +51,9 @@ object AppPreferences {
     const val DEFAULT_COLLISION_DETECTION = true
     const val DEFAULT_WIDGET_POSITIONS_JSON = "[]"
     const val DEFAULT_DOCK_STYLE = "frosted"
+    const val DOCK_STYLE_FROSTED = "frosted"
+    const val DOCK_STYLE_SOLID = "solid"
+    const val DOCK_STYLE_TRANSPARENT = "transparent"
     const val DEFAULT_QUICK_SETTINGS_ENABLED = true
     const val DEFAULT_NOTIFICATION_SHADE_ENABLED = true
     const val DEFAULT_SMOOTH_ANIMATIONS = true
@@ -89,6 +92,11 @@ object AppPreferences {
                 }
             }
         }
+    }
+
+    fun getInstance(context: Context): AppPreferences {
+        init(context)
+        return this
     }
 
     private fun getPrefs(context: Context? = null): SharedPreferences {
@@ -400,6 +408,26 @@ object AppPreferences {
     /**
      * Resets all launcher configurations back to their factory default values.
      */
+    var collisionDetection: Boolean
+        get() = collisionDetectionEnabled
+        set(value) { collisionDetectionEnabled = value }
+
+    var iconPack: String?
+        get() = selectedIconPack
+        set(value) { selectedIconPack = value }
+
+    var enableQuickSettings: Boolean
+        get() = quickSettingsEnabled
+        set(value) { quickSettingsEnabled = value }
+
+    var enableNotificationShade: Boolean
+        get() = notificationShadeEnabled
+        set(value) { notificationShadeEnabled = value }
+
+    var batterySaver: Boolean
+        get() = batterySaverMode
+        set(value) { batterySaverMode = value }
+
     fun resetToDefaults(context: Context? = null) {
         val prefs = if (context != null) getPrefs(context) else sharedPreferences ?: return
         prefs.edit().clear().apply()

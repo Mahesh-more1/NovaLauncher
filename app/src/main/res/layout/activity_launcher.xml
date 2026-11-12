@@ -216,6 +216,49 @@
     </androidx.cardview.widget.CardView>
 
     <!-- ================================================================== -->
+    <!-- 4b. APP DRAWER SHEET (Hidden offscreen by default)                   -->
+    <!-- ================================================================== -->
+    <FrameLayout
+        android:id="@+id/drawer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/frosted_dark_heavy"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="48dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_search_bar"
+                android:hint="@string/search_hint"
+                android:textColorHint="@color/search_hint_color"
+                android:textColor="@color/search_text_color"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:singleLine="true" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/app_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:paddingBottom="40dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ================================================================== -->
     <!-- 5. PAGE INDICATOR (dots)                                            -->
     <!-- ================================================================== -->
     <LinearLayout

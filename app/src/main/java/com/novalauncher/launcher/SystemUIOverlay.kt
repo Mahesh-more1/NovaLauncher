@@ -47,6 +47,7 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
+import com.novalauncher.launcher.service.NovaNotificationListenerService
 import java.lang.ref.WeakReference
 import java.text.SimpleDateFormat
 import java.util.Date

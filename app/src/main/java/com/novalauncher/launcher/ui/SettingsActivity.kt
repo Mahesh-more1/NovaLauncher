@@ -218,10 +218,10 @@ class SettingsActivity : AppCompatActivity() {
         val previewContainer = findViewById<FrameLayout>(R.id.physics_preview_container)
         physicsPreviewView = PhysicsPreviewView(
             context = this,
-            initialGravity = prefs.gravityStrength,
-            initialFluidResistance = prefs.fluidResistance,
-            initialCollisions = prefs.collisionDetection,
-            initialEnabled = prefs.physicsEnabled
+            gravity = prefs.gravityStrength,
+            fluidResistance = prefs.fluidResistance,
+            collisions = prefs.collisionDetection,
+            isPhysicsEnabled = prefs.physicsEnabled
         )
         previewContainer.addView(physicsPreviewView)
 
